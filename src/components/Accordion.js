@@ -6,7 +6,7 @@ function Accordion({items}) {
   const [title, setTitle] = useState(null)
 
   function titleClick(index){
-    console.log('Title was clicked', index);
+    // console.log('Title was clicked', index);
     setTitle(index)
   }
 

@@ -39,11 +39,11 @@ const options = [
   {
     label: 'Dutch',
     value: 'nl'
-  },
+  }
 ];
 
 function Translate(props) {
-const [language, setLanguage] = useState(options[0])
+const [language, setLanguage] = useState('')
 const [text, setText] = useState('')
 
   return (

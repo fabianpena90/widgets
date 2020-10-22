@@ -3,6 +3,8 @@ import Accordion from './Accordion'
 import Search from './Search'
 import ColorSelector from './ColorSelector'
 import Translate from './Translate'
+import Route from './Route'
+import Header from './Header'
 
 const items = [
   {
@@ -34,9 +36,35 @@ const options = [
   },
 ]
 
+
 function App() {
-  // const [selected, setSelected] = useState(options[0]);
+  const [selected, setSelected] = useState(options[0]);
   // const [showColorSelector, setShowColorSelector] = useState(true)
+// function showAccordion(){
+//   if(window.location.pathname === '/'){
+//     return <Accordion items={items}/>
+//   }
+// }
+
+// function showSearch(){
+//   if(window.location.pathname === '/list'){
+//     return <Search />
+//   }
+  
+// }
+
+// function showColorSelector(){
+//   if(window.location.pathname === '/colorSelector'){
+//     return <ColorSelector />
+//   }
+// }
+
+// function showTranslate(){
+//   if(window.location.pathname === '/translate'){
+//     return <Translate />
+//   }
+// }
+
 
   return (
     <div className='ui container'>
@@ -51,7 +79,24 @@ function App() {
       />  */}
       {/* : null
      }  */}
-     <Translate />
+     <Header />
+     <Route path="/">
+        <Accordion items={items} />
+      </Route>
+     <Route path="/list">
+        <Search  />
+      </Route>
+     <Route path="/colorSelector">
+        <ColorSelector 
+          label="Select a color"
+          options={options}
+          selected={selected}
+          onSelectedChange={setSelected}
+         />
+      </Route>
+     <Route path="/translate">
+        <Translate  />
+      </Route>
     </div>
   );
 }
