@@ -2,6 +2,7 @@ import React, { useState, useEffect }from 'react';
 import Accordion from './Accordion'
 import Search from './Search'
 import ColorSelector from './ColorSelector'
+import Translate from './Translate'
 
 const items = [
   {
@@ -34,17 +35,23 @@ const options = [
 ]
 
 function App() {
-  const [selected, setSelected] = useState(options[0])
+  // const [selected, setSelected] = useState(options[0]);
+  // const [showColorSelector, setShowColorSelector] = useState(true)
 
   return (
     <div className='ui container'>
     {/* <Search /> */}
      {/* <Accordion items={items} /> */}
-     <ColorSelector 
+     {/* <button onClick={() => setShowColorSelector(!showColorSelector)}>Toggle Dropdown</button>
+     {showColorSelector ? */}
+     {/* <ColorSelector 
       selected={selected} 
       options={options}
       onSelectedChange={setSelected}
-      />
+      />  */}
+      {/* : null
+     }  */}
+     <Translate />
     </div>
   );
 }
